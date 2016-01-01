@@ -7,5 +7,5 @@ PARAM (
 [STRING]$department = "*"
 )
 
-
-Get-ADUser -Filter {(Department -Like $department)} | sort-object | format-table -Property Name
+#By using the -properties switch we can add other properties that normally wouldn't be shown
+Get-ADUser -Filter {Department -Like $department} -properties Department| sort-object | format-table -Property Name, Department

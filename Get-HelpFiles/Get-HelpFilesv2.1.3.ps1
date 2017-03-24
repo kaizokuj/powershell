@@ -1,12 +1,13 @@
-﻿[CmdletBinding()]
+﻿Function get-Helpfiles {
+
+[CmdletBinding()]
 
 PARAM (
 
 [STRING]$Module = "*",
 [STRING]$Target = "C:\Cmdlets\",
 [STRING]$Command = "*",
-[SWITCH]$NoUpdate,
-[SWITCH]$Sort
+[SWITCH]$NoUpdate
 
 )
 
@@ -54,4 +55,6 @@ else {
    
    write-host -foregroundcolor green "[" (GetTime) "] Your help files were created in $target"
 
-   }
+    }
+
+}

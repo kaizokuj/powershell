@@ -1,4 +1,6 @@
-﻿Function get-Helpfiles {
+﻿#Requires -runasadministrator
+
+Function get-Helpfiles {
 <#
 .SYNOPSIS
 Creates .txt file version of one or more Get-Help commands.
@@ -20,7 +22,7 @@ get-helpfiles -NoUpdate
 Creates all command help files while skipping the updating of help files.
 .LINK
 Get-Command
-Get-help 
+Get-help
 
 #>
 [CmdletBinding()]
@@ -63,7 +65,7 @@ If(!($NoUpdate)){
 
         Write-Host "[" (getTime) "] The system will now create your helpfiles."
 
-        Get-Command -Module $Module $command | ?{$_.commandtype -ne "Alias"} | ?{$_.ModuleName -ne ""} | %{$Name = $_.Name; Get-Help -full $Name | Out-File "$target\$Name.txt"}
+        Get-Command -Module $Module $command | Where-object{$_.commandtype -ne "Alias"} | Where-object{$_.ModuleName -ne ""} | ForEach-Object{$Name = $_.Name; Get-Help -full $Name | Out-File "$target\$Name.txt"}
 
         write-host -foregroundcolor green "[" (GetTime) "] Your help files were created in $target"
 
@@ -77,7 +79,7 @@ else {
 
    Write-Host "[" (GetTime) "] The system will now create your helpfiles."
    
-   (Get-Command -Module $Module $command | ?{$_.commandtype -ne "Alias"}) | ?{$_.ModuleName -ne ""} | %{$Name = $_.Name; Get-Help -full $Name | Out-File "$target\$Name.txt"}
+   (Get-Command -Module $Module $command | Where-object{$_.commandtype -ne "Alias"}) | Where-object{$_.ModuleName -ne ""} | ForEach-Object{$Name = $_.Name; Get-Help -full $Name | Out-File "$target\$Name.txt"}
    
    write-host -foregroundcolor green "[" (GetTime) "] Your help files were created in $target"
 

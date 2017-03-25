@@ -84,3 +84,6 @@ else {
     }
 
 }
+
+
+#Noticed that if you specify a command, rather then updating that specific command or it's module, it tries to update all, FIX.

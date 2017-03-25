@@ -31,7 +31,7 @@ PARAM (
 #[Parameter(Mandatory=$true,Position=1,ValueFromPipeline=$false,ValueFromPipelineByPropertyName=$false)]
 [STRING]$Target = "C:\Cmdlets\",
 #[Parameter(Mandatory=$true,Position=2,ValueFromPipeline=$false,ValueFromPipelineByPropertyName=$false)]
-[STRING]$Command = "*",
+[STRING[]]$Command = "*",
 #[Parameter(Mandatory=$false,Position=3,ValueFromPipeline=$false,ValueFromPipelineByPropertyName=$false)]
 [SWITCH]$NoUpdate
 

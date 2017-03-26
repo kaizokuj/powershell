@@ -1,12 +1,17 @@
-﻿[CmdletBinding()]
+﻿Funtion Get-ADUserLastLogin {
+
+[CmdletBinding()]
 
 #This is a script designed to quickly lookup last user login
-#This script is not working yet
+#This script is not working yet || Might now, needs to be tested
 
 PARAM (
 
-[STRING]$email = "*"
+[STRING]$SAN
+
 )
 
  
-get-aduser -filter {LastLogon -like "*"}
+get-aduser -Identity $SAN -Properties LastLogon, LastlogonTimestamp | Select-Object -ExpandProperty LastLogon, LastlogonTimestamp
+
+}

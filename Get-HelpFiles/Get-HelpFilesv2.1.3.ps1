@@ -28,13 +28,10 @@ Get-help
 [CmdletBinding()]
 
 PARAM (
-#[Parameter(Mandatory=$true,Position=0,ValueFromPipeline=$false,ValueFromPipelineByPropertyName=$false)]
+    
 [STRING]$Module = "*",
-#[Parameter(Mandatory=$true,Position=1,ValueFromPipeline=$false,ValueFromPipelineByPropertyName=$false)]
 [STRING]$Target = "C:\Cmdlets\",
-#[Parameter(Mandatory=$true,Position=2,ValueFromPipeline=$false,ValueFromPipelineByPropertyName=$false)]
 [STRING[]]$Command = "*",
-#[Parameter(Mandatory=$false,Position=3,ValueFromPipeline=$false,ValueFromPipelineByPropertyName=$false)]
 [SWITCH]$NoUpdate
 
 )

@@ -4,8 +4,8 @@ function Reload-Module {
 
     param (
 
-    [Parameter(Mandatory=$True,ValueFromPipeline=$True,ValueFromPipelineByPropertyName=$True)]
-    [STRING[]]$Module
+        [Parameter(Mandatory=$True,ValueFromPipeline=$True,ValueFromPipelineByPropertyName=$True)]
+        [STRING[]]$Module
 
     )
 

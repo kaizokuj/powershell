@@ -33,11 +33,12 @@ Remove-Module
         ForEach ($module in $Modules) {
         
             $ModulePath = Get-Module -Name $Module
+            #Unblock-File -Path $ModulePath
             remove-module $module
             Write-Host "Removed Module: $Module"
+            Get-Module
             Import-Module $ModulePath.Path
             Write-host "Loaded Module from Path:" $ModulePath.Path
-
             write-Host "Reload Succesfull"
         }
     }

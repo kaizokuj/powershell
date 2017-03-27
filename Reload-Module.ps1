@@ -12,6 +12,7 @@ function Reload-Module {
     $ModulePath = Get-Module -Name $Module
     remove-module $module
     Write-Host "Removed Module: $Module"
+    get-module
     Import-Module $ModulePath.Path
     Write-host "Loaded Module from Path:" $ModulePath.Path
 

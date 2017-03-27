@@ -1,5 +1,24 @@
 function Reload-Module {
-
+<#
+.SYNOPSIS
+Reloads an already loaded module from it's original path.
+.DESCRIPTION
+The cmdlet finds the path a module is loaded from then proceeds to use remove-module and Import-Module.
+.NOTES
+This cmdlet is intended for development purposes, to eliminate the need to manually reload a function one is developing.
+.EXAMPLE
+Reload-Module ActiveDirectory
+Attempts to unload and import the ActiveDirectory Module.
+.EXAMPLE
+Reload-Module ActiveDirectory, Plaster
+This command will reload both ActiveDirectory and Plaster.
+.EXAMPLE
+Get-module -Name * | Reload-Module
+Reloads all currently loaded modules.
+.LINK
+Import-Module
+Remove-Module
+#>
     [CmdletBinding()]
 
     param (

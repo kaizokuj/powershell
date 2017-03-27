@@ -1,4 +1,4 @@
-﻿#Requires -runasadministrator
+﻿##Requires -runasadministrator
 
 Function get-Helpfiles {
 <#

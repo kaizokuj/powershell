@@ -19,7 +19,7 @@ Reloads all currently loaded modules.
 Import-Module
 Remove-Module
 #>
-    [CmdletBinding()]
+    [CmdletBinding(ConfirmImpact="Medium",SupportsShouldProcess)]
 
     param (
 
@@ -33,13 +33,12 @@ Remove-Module
         ForEach ($module in $Modules) {
         
             $ModulePath = Get-Module -Name $Module
-            #Unblock-File -Path $ModulePath
-            remove-module $module
+            remove-module $module -Verbose
             Write-Host "Removed Module: $Module"
-            Get-Module
-            Import-Module $ModulePath.Path
+            Import-Module $ModulePath.Path -Verbose
             Write-host "Loaded Module from Path:" $ModulePath.Path
             write-Host "Reload Succesfull"
+
         }
     }
 

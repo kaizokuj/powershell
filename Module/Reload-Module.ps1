@@ -46,7 +46,9 @@ Remove-Module
 
 }
 
+Import-module ../Scripts/ReloadTest.ps1
 
+Reload-Module Reload-Test
    
 
 

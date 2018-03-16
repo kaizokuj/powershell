@@ -47,7 +47,7 @@ Remove-Module
 }
 
 
-   
+Reload-Module ReloadTest
 
 
 #Add Error Handling and a decent way to see if it was succesfull

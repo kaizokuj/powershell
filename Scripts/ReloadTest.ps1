@@ -1,5 +1,5 @@
 Function Reload-test {
 
-write-host "Green"
+write-host "Red"
 
 }

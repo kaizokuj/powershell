@@ -1,0 +1,10 @@
+[CmdletBinding()]
+
+PARAM (
+    
+[STRING]$Module = "*",
+[STRING]$Target = "C:\Cmdlets\",
+[STRING[]]$Command = "*",
+[SWITCH]$NoUpdate
+
+)

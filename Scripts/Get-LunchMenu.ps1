@@ -2,11 +2,11 @@ $URI = "http://www.grillhuset.se"
 $HTML = Invoke-WebRequest -URI $URI
 
 [STRING[]]$days = @("måndag","tisdag","onsdag","torsdag","fredag")
-[STRING[]]$UniqueIDS = @(105..110)
+[STRING[]]$UniqueIDS = @(107..111)
 
 ForEach ($UniqueID in $UniqueIDS) {
 
-    $result = $HTML.Parsedhtml.GetElementsByTagName('p') | Where-Object {$_.UniqueNumber -like "$UniqueID*"} | Select-Object -ExpandProperty OuterText 
+    $result = $HTML.Parsedhtml.GetElementsByTagName('p') | Where-Object {$_.UniqueNumber -like "$UniqueID"} | Select-Object -ExpandProperty OuterText 
     
     $result = $result.ToLower()
     $result = $result -replace '.-\)', '' 

@@ -9,9 +9,6 @@ Function Download-File {
 
     )
 
-    Set-Alias -Name "Download-File" -Value "curl"
-    Set-Alias -Name "Download-File" -Value "wget"
-
     [DATETIME]$TimeStarted = (get-date).ToShorttimestring()
     $BITSStatus = (Get-Service BITS).Status
     Write-Verbose "BITS is: $BITSStatus"

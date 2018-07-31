@@ -1,0 +1,1 @@
+Get-WMIObject win32_userprofile | Select-Object @{LABEL="last used";EXPRESSION={$_.ConvertToDateTime($_.lastusetime)}},LocalPath | Where-Object {$_.LocalPath -match '^c:\\Users\\.{3}$'}

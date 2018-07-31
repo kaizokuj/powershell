@@ -1,0 +1,18 @@
+Source:
+https://social.technet.microsoft.com/Forums/office/en-US/931cc5ad-1a36-45eb-9901-5f2d13344a69/read-outlook-email-and-get-specific-content-from-mail-with-powershell?forum=winserverpowershell
+
+
+# How to setup the object
+$Outlook = New-Object -ComObject Outlook.Application
+
+# How to get the mailboxes
+$OutlookFolders = $Outlook.Session.Folders.Item(1).Folders
+
+# How to get the inkorg
+$OutlookInbox = $Outlook.session.GetDefaultFolder(6)
+
+# How to get the amount of emails
+$amount = $outlookinbox.Items.count
+
+# How to get the range of emails
+$range = ($amount - 10)..$amount

@@ -41,7 +41,7 @@ Function Sort-Files {
 
         Try {
 
-            Move-Item -Path $Item.FullName -Destination $destination
+            Move-Item -Path $Item.FullName -Destination $destination -ErrorAction SilentlyContinue
 
         }
 

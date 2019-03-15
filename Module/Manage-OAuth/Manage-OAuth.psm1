@@ -21,7 +21,7 @@ Function Get-AuthToken {
             [parameter(Mandatory=$True, ParameterSetName = 'UserInput')]$ClientID,
             [parameter(Mandatory=$True, ParameterSetName = 'UserInput')]$Secret,
             [parameter(Mandatory=$True, ParameterSetName = 'UserInput')]$RedirectURI,        
-            [parameter(Mandatory=$True)]$Scope,
+            [parameter(Mandatory=$True)][]$Scope,
             [parameter(Mandatory=$False)]$RequestURI = "https://www.googleapis.com/oauth2/v4/token",
             [parameter(Mandatory=$False, ParameterSetName = 'FileInput')]$ConfigurationFile,
             [parameter(Mandatory=$False)]$URL = "https://accounts.google.com/o/oauth2/auth?client_id="

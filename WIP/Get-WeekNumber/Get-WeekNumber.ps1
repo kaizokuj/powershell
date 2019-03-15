@@ -2,11 +2,25 @@ Function Get-WeekNumber {
 
     param (
 
-        [datetime]$Date = (get-date)
+        [Parameter(Mandatory=$false)][datetime]$Date = (get-date),
+        [Parameter(Mandatory=$false)]$Week
 
     )
 
-    $Week = get-date -Date $Date -UFormat %W
+    if ($Week) {
 
-    Write-host "Week at set date: " $Week
+        
+
+    }
+
+    else {
+
+        $Week = get-date -Date $Date -UFormat %W
+        Write-host "Week at set date: " $Week
+
+    }
+
+    
+
+    
 }
